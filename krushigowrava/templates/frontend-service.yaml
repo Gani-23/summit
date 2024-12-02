@@ -6,7 +6,7 @@ metadata:
     app: frontend
     release: {{ .Release.Name }}
 spec:
-  type: LoadBalancer
+  type: {{ .Values.frontend.service.type }}
   ports:
   - port: {{ .Values.frontend.service.port }}
     targetPort: 3000

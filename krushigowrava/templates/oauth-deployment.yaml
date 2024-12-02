@@ -1,3 +1,4 @@
+{{- /* OAuth Deployment */ -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,7 +24,7 @@ spec:
     spec:
       containers:
       - name: oauth
-        image: eagleeye007/kauthentication
+        image: "{{ .Values.oauth.image.repository }}:{{ .Values.oauth.image.tag }}"
         imagePullPolicy: {{ .Values.oauth.image.pullPolicy }}
         ports:
         - containerPort: 3001
