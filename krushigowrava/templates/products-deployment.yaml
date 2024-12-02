@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: products
-        image: "{{ .Values.products.image.repository }}:{{ .Values.products.image.tag }}"
+        image: eagleeye007/kshopping
         imagePullPolicy: {{ .Values.products.image.pullPolicy }}
         ports:
         - containerPort: 3002
