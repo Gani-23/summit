@@ -23,13 +23,6 @@ spec:
         imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
         ports:
         - containerPort: 3000
-        resources:
-          requests:
-            cpu: {{ .Values.frontend.resources.requests.cpu }}
-            memory: {{ .Values.frontend.resources.requests.memory }}
-          limits:
-            cpu: {{ .Values.frontend.resources.limits.cpu }}
-            memory: {{ .Values.frontend.resources.limits.memory }}
         env:
         - name: ENVIRONMENT
           value: {{ .Values.global.environment }}
