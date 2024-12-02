@@ -22,6 +22,13 @@ oauth:
   service:
     type: LoadBalancer
     port: 3001
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
   metrics:
     enabled: true
 
@@ -29,11 +36,18 @@ oauth:
 products:
   replicaCount: 2
   image:
-    repository: eagleeye007/kshopee
+    repository: eagleeye007/kshopping
     pullPolicy: Always
   service:
     type: LoadBalancer
     port: 3002
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
   metrics:
     enabled: true
 
@@ -77,5 +91,5 @@ serviceMonitor:
 # You can add common environment variables here that apply to all services
 commonEnv:
   # Example:
-  # DEBUG: "true"
-  # LOG_LEVEL: "info"
+  DEBUG: "true"
+  LOG_LEVEL: "info"
