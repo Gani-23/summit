@@ -6,7 +6,7 @@ global:
 frontend:
   replicaCount: 2
   image:
-    repository: eagleeye007/kfrorevamp
+    repository: eagleeye007/bazooka
     pullPolicy: Always
   service:
     type: LoadBalancer
@@ -17,18 +17,11 @@ frontend:
 oauth:
   replicaCount: 2
   image:
-    repository: eagleeye007/koauth
+    repository: eagleeye007/kauthentication
     pullPolicy: Always
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 3001
-  resources:
-    requests:
-      cpu: 100m
-      memory: 128Mi
-    limits:
-      cpu: 250m
-      memory: 256Mi
   metrics:
     enabled: true
 
@@ -36,18 +29,11 @@ oauth:
 products:
   replicaCount: 2
   image:
-    repository: eagleeye007/kshopping
+    repository: eagleeye007/kshopee
     pullPolicy: Always
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 3002
-  resources:
-    requests:
-      cpu: 100m
-      memory: 128Mi
-    limits:
-      cpu: 250m
-      memory: 256Mi
   metrics:
     enabled: true
 
@@ -71,7 +57,7 @@ grafana:
   replicaCount: 1
   service:
     type: ClusterIP
-    port: 3000
+    port: 8080
   resources:
     requests:
       cpu: 100m

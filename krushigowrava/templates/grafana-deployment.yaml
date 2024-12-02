@@ -58,7 +58,7 @@ spec:
       - name: grafana
         image: grafana/grafana:8.2.5
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
         resources:
           requests:
             cpu: {{ .Values.grafana.resources.requests.cpu }}
@@ -101,7 +101,7 @@ spec:
   type: {{ .Values.grafana.service.type }}
   ports:
   - port: {{ .Values.grafana.service.port }}
-    targetPort: 3000
+    targetPort: 8080
     protocol: TCP
   selector:
     app: grafana
