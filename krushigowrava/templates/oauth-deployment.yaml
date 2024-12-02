@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: oauth
-        image: eagleeye007/koauth
+        image: eagleeye007/kauthentication
         imagePullPolicy: {{ .Values.oauth.image.pullPolicy }}
         ports:
         - containerPort: 3001

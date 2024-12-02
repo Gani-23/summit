@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: products
-        image: eagleeye007/kshopping
+        image: eagleeye007/kshopee
         imagePullPolicy: {{ .Values.products.image.pullPolicy }}
         ports:
         - containerPort: 3002
