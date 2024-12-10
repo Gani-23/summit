@@ -1,6 +1,6 @@
 # Summit 2024
 
-The **Capybara** project is a full-stack Kubernetes-based application that uses **Terraform** for provisioning the infrastructure and **Helm** for managing Kubernetes deployments. The project demonstrates a microservices architecture and showcases various services and their interactions through the `projectfiles` folder.
+The **Summit** project is a full-stack Kubernetes-based application that uses **Terraform** for provisioning the infrastructure and **Helm** for managing Kubernetes deployments. The project demonstrates a microservices architecture and showcases various services and their interactions through the `projectfiles` folder.
 
 ## Project Overview
 
