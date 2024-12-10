@@ -65,7 +65,7 @@ prometheus:
   enabled: true
   replicaCount: 1
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 9090
   resources:
     requests:
@@ -79,7 +79,7 @@ grafana:
   enabled: true
   replicaCount: 1
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 8080
   resources:
     requests:
