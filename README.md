@@ -163,12 +163,31 @@ Before you begin, ensure you have the following installed:
      ```bash
      helm upgrade krushigowrava .
      ```
+## Jaeger Metrics Hosting 
+
+```
+# Command to run Jaeger using docker 
+
+sudo docker run -d --name jaeger \
+  -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
+  -p 5775:5775/udp \
+  -p 6831:6831/udp \
+  -p 6832:6832/udp \
+  -p 5778:5778 \
+  -p 16686:16686 \
+  -p 14250:14250 \
+  -p 14268:14268 \
+  -p 14269:14269 \
+  -p 9411:9411 \
+  jaegertracing/all-in-one:1.22
+```
 
 ## Monitoring and Observability
 
 The project includes monitoring tools:
 - **Grafana**: Visualization and monitoring dashboards
 - **Prometheus**: Metrics collection and alerting
+- ** Jaeger Metrics **: Metrics Visualisation
 
 Access these services using kubectl port-forward or through your cluster's ingress configuration.
 
